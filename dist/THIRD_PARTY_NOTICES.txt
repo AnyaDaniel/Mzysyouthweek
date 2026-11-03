@@ -1,0 +1,5 @@
+MZYS Youth Week Photo Maker application code: GNU Affero General Public License version 3 or later (AGPL-3.0-or-later). Corresponding source: source.zip on this site. Licence text: https://www.gnu.org/licenses/agpl-3.0.txt
+@imgly/background-removal 1.7.0 by IMG.LY: AGPL-3.0. https://github.com/imgly/background-removal-js
+Model/runtime assets are fetched from IMG.LY and its dependencies when background removal is requested; see the upstream repository for their notices.
+DM Sans and Manrope: SIL Open Font License, delivered through Google Fonts.
+Church flyer, logos and portraits: supplied by the user; excluded from the software licence.
