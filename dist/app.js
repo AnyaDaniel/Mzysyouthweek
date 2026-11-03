@@ -12,8 +12,8 @@ function resetPosition(){state.zoom=1;state.x=0;state.y=0;$('zoom').value=100;$(
 function render(){if(!state.template)return;ctx.clearRect(0,0,1164,1280);ctx.drawImage(state.template,0,0,1164,1280);
  // Replace only the countdown footprint. The church portraits and all other artwork remain source pixels.
  ctx.fillStyle='#fff';ctx.beginPath();ctx.moveTo(0,550);ctx.lineTo(145,550);ctx.lineTo(145,603);ctx.lineTo(536,603);ctx.lineTo(536,1062);ctx.lineTo(420,1062);ctx.lineTo(420,1095);ctx.lineTo(0,1095);ctx.closePath();ctx.fill();ctx.fillRect(155,580,43,25);ctx.fillRect(343,577,45,28);
- const g=ctx.createLinearGradient(50,600,480,1024);g.addColorStop(0,'#f1f5ff');g.addColorStop(1,'#d4e4ff');
- ctx.save();ctx.shadowColor='#133ba62b';ctx.shadowBlur=20;ctx.shadowOffsetY=8;rounded(slot.x,slot.y,slot.w,slot.h,slot.r);ctx.fillStyle=g;ctx.fill();ctx.restore();
+ const photoBackground='#ffffff';
+ ctx.save();ctx.shadowColor='#133ba62b';ctx.shadowBlur=20;ctx.shadowOffsetY=8;rounded(slot.x,slot.y,slot.w,slot.h,slot.r);ctx.fillStyle=photoBackground;ctx.fill();ctx.restore();
  ctx.save();rounded(slot.x,slot.y,slot.w,slot.h,slot.r);ctx.clip();
  if(state.active){const im=state.active;const scale=Math.max(slot.w/im.naturalWidth,slot.h/im.naturalHeight)*state.zoom;const w=im.naturalWidth*scale,h=im.naturalHeight*scale;const maxX=Math.max(0,(w-slot.w)/2),maxY=Math.max(0,(h-slot.h)/2);const x=Math.max(-maxX,Math.min(maxX,state.x)),y=Math.max(-maxY,Math.min(maxY,state.y));ctx.drawImage(im,slot.x+(slot.w-w)/2+x,slot.y+(slot.h-h)/2+y,w,h);
  }else{ctx.fillStyle='#c2d2f3';ctx.beginPath();ctx.arc(267,757,57,0,Math.PI*2);ctx.fill();ctx.beginPath();ctx.ellipse(267,923,114,100,0,Math.PI,Math.PI*2);ctx.fill();ctx.fillStyle='#234c9f';ctx.textAlign='center';ctx.font='600 23px Arial';ctx.fillText('YOUR PHOTO HERE',267,978);}
