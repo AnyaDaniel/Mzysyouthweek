@@ -1,14 +1,14 @@
 'use strict';
 (()=>{
- const advert=document.getElementById('advert'),content=document.getElementById('content'),dialog=document.getElementById('reveal'),explore=document.getElementById('explore'),seconds=document.getElementById('seconds'),progress=document.getElementById('progress'),copy=document.getElementById('adCopy');
+ const advert=document.getElementById('advert'),content=document.getElementById('content'),dialog=document.getElementById('reveal'),explore=document.getElementById('explore'),seconds=document.getElementById('seconds'),progress=document.getElementById('adProgress');
  const duration=60000,start=performance.now();let completed=false,last=-1;
- const messages=['Something meaningful is coming. Let this moment be an invitation to pause.','Beyond the noise. Beyond the rush. Make room for a connection that lasts.','A sure foundation. A church family. A place for you to grow.','Almost there. One week. One sure foundation. An invitation with your name on it.'];
+
  document.body.classList.add('locked');content.inert=true;content.setAttribute('aria-hidden','true');advert.hidden=false;
  function tick(){
   if(completed)return;
   const elapsed=Math.min(duration,Math.max(0,performance.now()-start)),remaining=Math.ceil((duration-elapsed)/1000);
-  if(remaining!==last){seconds.textContent=String(remaining).padStart(2,'0');last=remaining;copy.textContent=messages[Math.min(3,Math.floor(elapsed/15000))];}
-  progress.style.strokeDashoffset=String(339.292*elapsed/duration);
+  if(remaining!==last){seconds.textContent=String(remaining).padStart(2,'0');last=remaining;}
+  progress.style.width=String(elapsed/duration*100)+'%';
   if(elapsed>=duration){completed=true;clearInterval(timer);advert.hidden=true;dialog.showModal();explore.focus();}
  }
  const timer=setInterval(tick,200);tick();document.addEventListener('visibilitychange',tick);
