@@ -7,3 +7,5 @@ Source is available at /source.zip. Application code is offered under AGPL-3.0-o
 
 ## Youth Week invitation
 /experience/ is a separate responsive invitation with a real 60-second introduction without a skip button, a Christ-centred reveal, original programme flyer and daily schedule. Saturday kickoff is updated to 3 p.m.; picnic/session 5:30 p.m. The QR asset points to https://mzysyouthweek-dist.vercel.app/experience/. Countdown and sharing run locally; there are no third-party advertisements or trackers.
+
+Crusade venue correction: Idu Furniture Market (Thursday 12 November, 5:30 p.m.).
